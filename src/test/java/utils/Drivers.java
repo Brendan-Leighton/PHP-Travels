@@ -11,8 +11,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 // WEB DRIVER MANAGER
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class WebDrivers {
-    private static WebDrivers DRIVERS;
+/**
+ * <strong>This is a SINGLETON</strong> WebDriver Handler. Use "getDriver()" to initialize the WebDriver.
+ */
+public class Drivers {
+    /**
+     * This.class's Singleton Object. It will be == to null if not already initialized.
+     */
+    private static Drivers DRIVERS;
+    /**
+     * The WebDriver returned from "getDriver()"
+     */
     private static WebDriver driver;
 
     private Drivers() {
@@ -29,12 +38,24 @@ public class WebDrivers {
         }
     }
 
+    /**
+     * Used to initialize the Web Driver
+     * @return A WebDriver. If one already exists then this will fetch it, else a new one will be created and then returned.
+     */
     public static WebDriver getDriver() {
         if (DRIVERS == null) DRIVERS = new Drivers();
         return driver;
     }
 
-    public static WebDriver Chrome() {
+    public static void quit() {
+        driver.quit();
+    }
+
+    /**
+     * CHROME driver setup
+     * @return WebDriver Chrome edition
+     */
+    private static WebDriver Chrome() {
         /*
             TO SELECT BROWSER VERSION
             WebDriverManager.chromedriver().browserVersion("95").setup();
@@ -48,19 +69,19 @@ public class WebDrivers {
         prefs.put("download.default_directory", System.getProperty("user.dir"+ File.separator +"externalFiles"+ File.separator +"downloads"));
 
         ChromeOptions options = new ChromeOptions()
-                .setHeadless(true)
+                .setHeadless(false)
                 .setExperimentalOption("prefs", prefs);
 
         return new ChromeDriver(options);
     }
 
+    /**
+     * FIREFOX driver setup
+     * @return WebDriver Firefox edition
+     */
     private WebDriver Firefox() {
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
-    }
-
-    public static void quit() {
-        driver.quit();
     }
 }
 
