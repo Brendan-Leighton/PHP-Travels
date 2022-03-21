@@ -1,7 +1,7 @@
 package utils;
 // SELENIUM
-
 import org.openqa.selenium.WebElement;
+// TEST-NG
 import org.testng.Assert;
 
 public class Asserts {
