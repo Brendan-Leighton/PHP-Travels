@@ -12,7 +12,7 @@ public class Waits {
 
     private Waits() {
         forElement = new WebDriverWait(Drivers.getDriver(), 20);
-        forUrl = new WebDriverWait(Drivers.getDriver(), 15);
+        forUrl = new WebDriverWait(Drivers.getDriver(), 10);
         forAlert = new WebDriverWait(Drivers.getDriver(), 5);
     }
 
