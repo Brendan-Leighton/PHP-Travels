@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 // TEST NG
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 // LOG-4-J
 import org.apache.log4j.PropertyConfigurator;
@@ -25,7 +26,7 @@ public class _BaseTest {
     SiteUrls urls;
     static Logger logger = LogManager.getLogger(_BaseTest.class);
 
-    @BeforeTest
+    @BeforeSuite
     public void setup() throws IOException {
 //        PropertyConfigurator.configure("C:\\Users\\br3nd\\IdeaProjects\\GenSpark\\PHP-Travels\\src\\test\\java\\resources\\log4j2-test.properties");
 
