@@ -59,7 +59,7 @@ public class Interacts {
 
         if (!isClicked) {
             try { // click element via Actions class
-                actions.moveToElement(clickableElement).click(clickableElement);
+                actions.moveToElement(clickableElement).click(clickableElement).build().perform();
 
                 isClicked = true;
             } catch (Error ignored) {}
