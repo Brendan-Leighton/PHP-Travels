@@ -1,6 +1,7 @@
 package tests.users;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -65,6 +66,11 @@ public class Users_NavBar extends _BaseTest {
     @Test
     public void Home_to_Company() {
         Navbar.test(SiteUrls.getHome(), Navbar.getNavbar_company(), SiteUrls.getCompany());
+    }
+
+    @Test
+    public void Home_to_Company_to_AboutUs() {
+        Navbar.testDropDownLink(SiteUrls.getHome(), Navbar.getNavbar_company_dropdown(), Navbar.getNavbar_dropdown_aboutUs(), SiteUrls.getCompany());
     }
 
     // NAVBAR from HOTELS
