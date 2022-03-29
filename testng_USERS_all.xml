@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/br3nd/IdeaProjects/GenSpark/PHP-Travels">
+        <classes>
+            <class name="tests.users.Users_Home">
+        <!--  HOME  -->
+                <methods>
+                    <include name="PracticeTests"/>
+                </methods>
+            </class>
+        <!--  NAVBAR - start  -->
+            <class name="tests.users.Users_NavBar">
+                <methods>
+                <!--  HOME  -->
+                    <include name="Home_to_Home"/>
+                    <include name="Home_to_LogoHome"/>
+                    <include name="Home_to_Hotels"/>
+                    <include name="Home_to_Flights"/>
+                    <include name="Home_to_Tours"/>
+                    <include name="Home_to_Visa"/>
+                    <include name="Home_to_Blog"/>
+                    <include name="Home_to_Offers"/>
+                    <include name="Home_to_Company"/>
+                    <include name="Home_to_Company_to_AboutUs"/>
+                <!--  HOTELS  -->
+                    <include name="Hotels_to_Home"/>
+                    <include name="Hotels_to_LogoHome"/>
+                    <include name="Hotels_to_Hotels"/>
+                    <include name="Hotels_to_Flights"/>
+                    <include name="Hotels_to_Tours"/>
+                    <include name="Hotels_to_Visa"/>
+                    <include name="Hotels_to_Blog"/>
+                    <include name="Hotels_to_Offers"/>
+                    <include name="Hotels_to_Company"/>
+                </methods>
+            </class>
+        <!--  NAVBAR - end  -->
+        </classes>
+    </test>
+</suite>
